@@ -203,8 +203,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # class                 border  backgr. text    indicator child_border
         client.focused          #000000 #000000 #000000 #B30000   #0096FF
-        client.focused_inactive #000000 #000000 #000000 #000000   #777777
-        client.unfocused        #000000 #000000 #000000 #000000   #777777
+        client.focused_inactive #000000 #000000 #000000 #000000   #000000
+        client.unfocused        #000000 #000000 #000000 #000000   #000000
         client.urgent           #000000 #000000 #000000 #B30000   #B30000
         client.placeholder      #000000 #000000 #000000 #000000   #000000
 
