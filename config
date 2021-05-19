@@ -212,17 +212,45 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 
         bar {
+           
                 i3bar_command i3bar -t
-                font pango:Hacks, FontAwesome 10
+                font pango:Hacks, FontAwesome 12
                 position top
                 #tray_output primary
-                #output primary
+                output HDMI-1
                 tray_padding 0
                 strip_workspace_numbers yes
                 binding_mode_indicator yes
                 workspace_min_width 25
-                strip_workspace_name yesT
-                status_command /usr/share/bumblebee-status/bumblebee-status -m cmus pasink pomodoro pacman system  -t iceberg-rainbow
+                strip_workspace_name yes
+                status_command /usr/share/bumblebee-status/bumblebee-status -m title spacer pomodoro spacer pacman spacer system  -t iceberg-rainbow
+        colors {
+                background #000000
+                statusline #A0FF00
+                separator #C0392B
+                
+                focused_workspace  #101f27 #0096FF #ffffff
+                active_workspace   #62727b #777777 #101f27
+                inactive_workspace #101f27 #37464f #101f27
+                urgent_workspace   #37474f #B30000 #d84315
+                binding_mode       #ffffff #B30000 #ffffff
+                 }
+
+        }
+
+        bar {
+           
+                i3bar_command i3bar -t
+                font pango:Hacks, FontAwesome 14
+                position top
+                #tray_output primary
+                output VGA-1
+                tray_padding 0
+                strip_workspace_numbers yes
+                binding_mode_indicator yes
+                workspace_min_width 25
+                strip_workspace_name yes
+                status_command /usr/share/bumblebee-status/bumblebee-status -m cmus pasink -t iceberg-rainbow
         colors {
                 background #000000
                 statusline #A0FF00
