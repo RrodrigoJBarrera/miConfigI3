@@ -153,7 +153,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Atajo Print
         
-                bindsym --release Print exec --no-startup-id scrot --focused -e 'mv $f ~/Pictures'
+                bindsym --release Control+Print exec --no-startup-id scrot --focused -e 'mv $f ~/Pictures'
+                bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/Pictures'
+
 
 # PROGRAMAS INICIO SECCION
 
