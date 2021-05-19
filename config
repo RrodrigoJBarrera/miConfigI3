@@ -203,9 +203,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # class                 border  backgr. text    indicator child_border
         client.focused          #000000 #000000 #000000 #B30000   #0096FF
-        client.focused_inactive #000000 #000000 #000000 #000000   #000000
-        client.unfocused        #000000 #000000 #000000 #000000   #000000
-        client.urgent           #000000 #000000 #000000 #B30000   #000000
+        client.focused_inactive #000000 #000000 #000000 #000000   #777777
+        client.unfocused        #000000 #000000 #000000 #000000   #777777
+        client.urgent           #000000 #000000 #000000 #B30000   #B30000
         client.placeholder      #000000 #000000 #000000 #000000   #000000
 
         client.background       #F10404
@@ -229,11 +229,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                 separator #C0392B
                 
                 focused_workspace  #101f27 #0096FF #ffffff
-                active_workspace   #62727b #62727b #101f27
+                active_workspace   #62727b #777777 #101f27
                 inactive_workspace #101f27 #37464f #101f27
                 urgent_workspace   #37474f #B30000 #d84315
                 binding_mode       #ffffff #B30000 #ffffff
-        }
+                 }
 
         }
 
