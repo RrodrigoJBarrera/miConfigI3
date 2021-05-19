@@ -43,7 +43,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Cerrar Ventana
         
-                bindsym $mod+w kill
+                bindsym $mod+Delete kill
 
         # Ventana Fullscreen  
         
@@ -75,9 +75,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Entrar en modo Ajuste de Ventana
 
-                bindsym $mod+Ctrl+Up mode "resize" 
+                bindsym $mod+Ctrl+Up mode "Ajuste Ventana" 
 
-                mode "resize" {
+                mode "Ajuste Ventana" {
   
                 # Teclas ajuste ventana
                 
