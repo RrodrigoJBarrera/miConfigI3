@@ -33,6 +33,16 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # sudo pacman -S polkit-gnome gnome-keyring
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)
 
+# PROGRAMAS INICIO SECCION
+
+        # Configuracion Pantalla
+
+                exec --no-startup-id ./.screenlayout/screen.sh
+                exec --no-startup-id xrandr --dpi 100
+        
+        # Configuracion Wallpapers
+
+                exec --no-startup-id nitrogen --restore    
 
 # Configuracion i3
 
@@ -47,7 +57,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Ventana Fullscreen  
         
-                bindsym $mod+Tab fullscreen toggle
+                bindsym $mod+Return fullscreen toggle
 
         # Desplazarse entre ventanas
         
@@ -137,7 +147,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Atajo Terminal
 
-                bindsym $mod+Return exec --no-startup-id alacritty
+                bindsym $mod+BackSpace exec --no-startup-id alacritty
 
         # Atajo Ranger File Manager
 
@@ -157,16 +167,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                 bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/Pictures'
 
 
-# PROGRAMAS INICIO SECCION
-
-        # Configuracion Pantalla
-
-                exec --no-startup-id ./.screenlayout/screen.sh  
-                exec  --no-startup-id xrandr --dpi 100
-        
-        # Configuracion Wallpapers
-
-                exec --no-startup-id nitrogen --restore      
+  
 
 # Espacios De Trabajo
 
@@ -190,7 +191,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Personalizar i3
 
         gaps inner 16
-        for_window [class=".*"] border pixel 10
+        for_window [class=".*"] border pixel 5
 
         floating_minimum_size 75 x 50
         floating_maximum_size -1 x -1
@@ -225,14 +226,14 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                 binding_mode_indicator yes
                 workspace_min_width 25
                 strip_workspace_name yes
-                status_command /usr/share/bumblebee-status/bumblebee-status -m title spacer pomodoro spacer pacman spacer system  -t iceberg-rainbow
+                status_command /usr/share/bumblebee-status/bumblebee-status -m pacman system  -t gruvbox
         colors {
                 background #000000
                 statusline #A0FF00
-                separator #C0392B
+                separator #ffffff
                 
                 focused_workspace  #101f27 #0096FF #ffffff
-                active_workspace   #62727b #777777 #101f27
+                active_workspace   #2A2A2A #2A2A2A #6C6C6C
                 inactive_workspace #101f27 #37464f #101f27
                 urgent_workspace   #37474f #B30000 #d84315
                 binding_mode       #ffffff #B30000 #ffffff
@@ -252,14 +253,14 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                 binding_mode_indicator yes
                 workspace_min_width 25
                 strip_workspace_name yes
-                status_command /usr/share/bumblebee-status/bumblebee-status -m cmus pasink -t iceberg-rainbow
+                status_command /usr/share/bumblebee-status/bumblebee-status -m cmus pomodoro -t gruvbox
         colors {
                 background #000000
                 statusline #A0FF00
-                separator #C0392B
+                separator #ffffff
                 
                 focused_workspace  #101f27 #0096FF #ffffff
-                active_workspace   #62727b #777777 #101f27
+                active_workspace   #2A2A2A #2A2A2A #6C6C6C
                 inactive_workspace #101f27 #37464f #101f27
                 urgent_workspace   #37474f #B30000 #d84315
                 binding_mode       #ffffff #B30000 #ffffff
