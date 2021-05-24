@@ -136,7 +136,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                 bindsym XF86AudioStop exec --no-startup-id playerctl stop
                 bindsym XF86AudioNext exec --no-startup-id playerctl next
                 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-                bindsym XF86Tools exec --no-startup-id alacritty -e cmus 
+                bindsym XF86Tools exec --no-startup-id lxterminal -e cmus 
 
         # Change Sound Card
 
@@ -147,11 +147,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Atajo Terminal
 
-                bindsym $mod+BackSpace exec --no-startup-id alacritty
+                bindsym $mod+BackSpace exec --no-startup-id lxterminal
 
         # Atajo Ranger File Manager
 
-                bindsym $mod+r exec --no-startup-id alacritty -e ranger
+                bindsym $mod+r exec --no-startup-id lxterminal -e ranger
         
         # Atajo Google Chrome
 
