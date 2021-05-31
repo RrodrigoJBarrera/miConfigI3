@@ -136,7 +136,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                 bindsym XF86AudioStop exec --no-startup-id playerctl stop
                 bindsym XF86AudioNext exec --no-startup-id playerctl next
                 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-                bindsym XF86Tools exec --no-startup-id lxterminal -e cmus 
+                bindsym XF86Tools exec --no-startup-id alacritty -e cmus 
 
         # Change Sound Card
 
@@ -151,7 +151,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Atajo Ranger File Manager
 
-                bindsym $mod+r exec --no-startup-id lxterminal -e ranger
+                bindsym $mod+r exec --no-startup-id alacritty -e ranger
         
         # Atajo Google Chrome
 
@@ -166,8 +166,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                 bindsym --release Control+Print exec --no-startup-id scrot --focused -e 'mv $f ~/Pictures'
                 bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/Pictures'
 
-
+        # Atajo File Explorer        
   
+                bindsym XF86Explorer exec --no-startup-id pcmanfm
 
 # Espacios De Trabajo
 
@@ -185,8 +186,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Mover la Ventana a otro Espacio de Trabajo
 
-                bindsym $mod+Shift+1 move container to workspace number $ws1
-                bindsym $mod+Shift+2 move container to workspace number $ws2
+                bindsym $mod+Shift+1 move container to workspace $ws1
+                bindsym $mod+Shift+2 move container to workspace $ws2
 
 # Personalizar i3
 
