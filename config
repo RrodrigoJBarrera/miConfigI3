@@ -46,6 +46,16 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Configuracion i3
 
+        # Mode system
+
+                bindsym $mod+0 mode "$mode_system"
+                set $mode_system (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdwon
+                mode "$mode_system"{
+                bindsym s exec --no-startup-id systemctl suspend
+
+                bindsym Escape mode "default"        
+                }
+
         # Configuraciones generales
         
                 focus_follows_mouse no
@@ -80,8 +90,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Ubicacion Proxima Ventana 
 
-                bindsym $mod+h split h
-                bindsym $mod+v split v
+                bindsym $mod+e split toggle
 
         # Entrar en modo Ajuste de Ventana
 
@@ -112,7 +121,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Modificar el archivo Config
                 
-                bindsym $mod+e exec --no-startup-id "code ./.config/i3/config"
+                bindsym $mod+h exec --no-startup-id "code ./.config/i3/config"
 
         # Refrescar i3wm al iniciar
 
@@ -227,7 +236,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                 binding_mode_indicator yes
                 workspace_min_width 25
                 strip_workspace_name yes
-                status_command /usr/share/bumblebee-status/bumblebee-status -m pacman system  -t gruvbox
+                status_command /usr/share/bumblebee-status/bumblebee-status -m arch_update arandr todo system  -t gruvbox 
         colors {
                 background #000000
                 statusline #A0FF00
