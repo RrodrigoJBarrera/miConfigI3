@@ -49,9 +49,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
         # Mode system
 
                 bindsym $mod+0 mode "$mode_system"
-                set $mode_system (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdwon
+                set $mode_system (s)Suspend, (r)Reboot, (e)Shutdwon
                 mode "$mode_system"{
-                bindsym s exec --no-startup-id systemctl suspend
+                bindsym e exec --no-startup-id systemctl shutdown
+                bindsym r exec --no-startup-id systemctl reboot
+                bindsym s exec --no-startup-id systemctl suspend; mode "default"
 
                 bindsym Escape mode "default"        
                 }
@@ -121,7 +123,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Modificar el archivo Config
                 
-                bindsym $mod+h exec --no-startup-id "code ./.config/i3/config"
+                bindsym $mod+h exec --no-startup-id "/home/rodrigojbarrera/.local/VSCode-linux-x64/code ./.config/i3/config"
 
         # Refrescar i3wm al iniciar
 
@@ -170,6 +172,14 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
                 bindsym $mod+p exec --no-startup-id $HOME/.config/i3/launcher-rofi
 
+	# Rofi Search Google
+
+		bindsym --release $mod+f exec --no-startup-id rofi -lines 10 -padding 0 -show search -modi search:~/.bin/rofi-web-search.py -i -p "Google: "
+
+        # Rofi Search Files
+
+                
+
         # Atajo Print
         
                 bindsym --release Control+Print exec --no-startup-id scrot --focused -e 'mv $f ~/Pictures'
@@ -178,6 +188,10 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
         # Atajo File Explorer        
   
                 bindsym XF86Explorer exec --no-startup-id pcmanfm
+
+        # Atajo Todo.txt
+                 
+                bindsym XF86Mail exec --no-startup-id alacritty -e nano ./Documents/.todo.md
 
 # Espacios De Trabajo
 
@@ -200,24 +214,17 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Personalizar i3
 
-        gaps inner 16
-        for_window [class=".*"] border pixel 5
-
-        floating_minimum_size 75 x 50
-        floating_maximum_size -1 x -1
-        hide_edge_borders smart_no_gaps
-        smart_borders on
-        smart_borders no_gaps
-
-        title_align center
-        popup_during_fullscreen smart
+        for_window [class=".*"] border pixel 6
+        client.focused border pixel 10
         workspace_auto_back_and_forth yes
+        hide_edge_borders none
+        focus_on_window_activation smart
 
 
         # class                 border  backgr. text    indicator child_border
         client.focused          #000000 #000000 #000000 #B30000   #0096FF
-        client.focused_inactive #000000 #000000 #000000 #2A2A2A   #2A2A2A
-        client.unfocused        #000000 #000000 #000000 #2A2A2A   #2A2A2A
+        client.focused_inactive #000000 #000000 #000000 #000000   #000000
+        client.unfocused        #000000 #000000 #000000 #000000   #000000
         client.urgent           #000000 #000000 #000000 #B30000   #B30000
         client.placeholder      #000000 #000000 #000000 #000000   #000000
 
