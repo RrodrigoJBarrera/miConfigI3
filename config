@@ -40,15 +40,12 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
                 exec --no-startup-id ./.screenlayout/screen.sh
                 exec --no-startup-id xrandr --dpi 100
-        
+       
         # Configuracion Wallpapers
 
                 exec --no-startup-id nitrogen --restore    
 
                 exec --no-startup-id picom
-
-                exec --no-startup-id alacritty -e nano ./Documents/.todo.md
-
 
 # Configuracion i3
 
@@ -77,7 +74,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Cerrar Ventana
         
-                bindsym $mod+Shift+Delete kill
+                bindsym $mod+Shift+o kill
 
         # Ventana Fullscreen  
         
@@ -90,6 +87,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                 bindsym $mod+Up focus up;
                 bindsym $mod+Right focus right;
 
+                bindsym $mod+h focus left;
+                bindsym $mod+j focus down; 
+                bindsym $mod+k focus up;
+                bindsym $mod+l focus right;
+
         # Mover ventanas
         
                 bindsym $mod+Shift+Left move left
@@ -97,6 +99,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                 bindsym $mod+Shift+Up move up
                 bindsym $mod+Shift+Right move right
 
+                bindsym $mod+Shift+h move left
+                bindsym $mod+Shift+j move down
+                bindsym $mod+Shift+k move up
+                bindsym $mod+Shift+l move right
+                
         # Cambiar Orientacion Ventanas
 
                 bindsym $mod+s layout toggle split
@@ -135,7 +142,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Modificar el archivo Config
                 
-                bindsym $mod+h exec --no-startup-id "/home/rodrigojbarrera/.local/VSCode-linux-x64/code ./.config/i3/config"
+                bindsym $mod+9 exec --no-startup-id code "./.config/i3/config"
 
         # Refrescar i3wm al iniciar
 
@@ -170,7 +177,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Atajo Terminal
 
-                bindsym $mod+BackSpace exec --no-startup-id alacritty
+                bindsym $mod+t exec --no-startup-id alacritty
 
         # Atajo Ranger File Manager
 
@@ -182,14 +189,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Atajo Dmenu
 
-                bindsym $mod+p exec --no-startup-id $HOME/.config/i3/launcher-rofi
-
-	# Rofi Search Google
-
-		bindsym --release $mod+f exec --no-startup-id rofi -lines 10 -padding 0 -show search -modi search:~/.bin/rofi-web-search.py -i -p "Google: "
-
-        # Rofi Search Files
-
+                bindsym $mod+p exec --no-startup-id $HOME/.config/i3/launcher-rofi;
 
         # Atajo Print
         
@@ -220,12 +220,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         # Mover la Ventana a otro Espacio de Trabajo
 
-                bindsym $mod+Shift+1 move container to workspace $ws1
-                bindsym $mod+Shift+2 move container to workspace $ws2
-
-        # Asignar aplicaciones a espacios de trabajos especificos
-
-                assign [class="Alacritty"] $ws2
+                bindsym $mod+Shift+1 move container to workspace $ws1;
+                bindsym $mod+Shift+2 move container to workspace $ws2;
 
 # Personalizar i3
 
@@ -249,7 +245,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         bar {
            
-                i3bar_command i3bar -t
+                i3bar_command i3bar
                 font pango:Hacks, FontAwesome 12
                 position top
                 #tray_output primary
@@ -276,7 +272,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
         bar {
            
-                i3bar_command i3bar -t
+                i3bar_command i3bar
                 font pango:Hacks, FontAwesome 14
                 position top
                 #tray_output primary
@@ -300,15 +296,3 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
                  }
 
         }
-
-# Experimental
-
-
-
-
-
-
-
-
-
-
